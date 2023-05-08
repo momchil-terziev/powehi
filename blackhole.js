@@ -3,19 +3,19 @@ class Blackhole {
   constructor(x, y, m) {
     this.pos = createVector(x, y);
     this.mass = m;
-    this.rs = (2 * Gvalue.value() * this.mass) / (Cvalue.value() * Cvalue.value());
+    this.rs = (2 * G * this.mass) / (c * c);
   }
 
   pull(photon) {
     var force = p5.Vector.sub(this.pos, photon.pos);
     var theta = force.heading();
     var r = force.mag();
-    var fg = Gvalue.value() * this.mass / (r * r);
-    var deltaTheta = -fg * (dt / Cvalue.value()) * sin(photon.theta - theta);
-    deltaTheta /= abs(1.0 - 2.0 * Gvalue.value() * this.mass / (r * Cvalue.value() * Cvalue.value()));
+    var fg = G * this.mass / (r * r);
+    var deltaTheta = -fg * (dt / c) * sin(photon.theta - theta);
+    deltaTheta /= abs(1.0 - 2.0 * G * this.mass / (r * c * c));
     photon.theta += deltaTheta;
     photon.vel = p5.Vector.fromAngle(photon.theta);
-    photon.vel.setMag(Cvalue.value());
+    photon.vel.setMag(c);
 
     if (r <= this.rs + 0.5) {
       photon.stop();
