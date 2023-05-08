@@ -42,9 +42,9 @@ class Photon {
     strokeWeight(2);
     noFill();
     beginShape();
-   for (let v of this.history) {
-      vertex(v.x, v.y);
-    }
+ //  for (let v of this.history) {
+//      vertex(v.x, v.y);
+ //   }
 
     endShape();
 
