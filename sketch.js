@@ -23,8 +23,8 @@ function setup() {
   rcol2 = random(226);
   rcol3 = random(226);
 
-  start = height / 2;
-  end = height / 2 - m87.rs * 2.6;
+  //start = height / 2;
+  //end = height / 2 - m87.rs * 2.6;
 
   for (let y = 0; y < start; y += 10) {
     particles.push(new Photon(width - 20, y));
@@ -46,10 +46,10 @@ function resetSketch() {
 
 function draw() {
   background(255);
-  stroke(0);
-  strokeWeight(1);
-  line(0, start, width, start);
-  line(0, end, width, end);
+  //stroke(0);
+  //strokeWeight(1);
+  //line(0, start, width, start);
+  //line(0, end, width, end);
 
   for (let p of particles) {
     m87.pull(p);
