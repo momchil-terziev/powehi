@@ -2,7 +2,7 @@ class Photon {
 
   constructor(x, y) {
     this.pos = createVector(x, y);
-    this.vel = createVector(-Cvalue.value(), 0);
+    this.vel = createVector(-c, 0);
     this.history = [];
     this.stopped = false;
     this.theta = PI;
@@ -39,12 +39,12 @@ class Photon {
     stroke(rcol1, rcol2, rcol3);
     point(this.pos.x, this.pos.y);
 
-    strokeWeight(2);
+    strokeWeight(1);
     noFill();
     beginShape();
- //   for (let v of this.history) {
-  //    vertex(v.x, v.y);
-  //  }
+    for (let v of this.history) {
+     vertex(v.x, v.y);
+   }
 
     endShape();
 
